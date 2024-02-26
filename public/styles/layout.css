@@ -23,3 +23,23 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+ 
+/* How-To for Source Sans 3 (DELETE BEFORE SUBMISSION)
+<uniquifier>: Use a uniquifier for the class name
+<weight>: Use a value from 200 to 900
+
+.source-sans 3-<uniquifier> {
+  font-family: "Source Sans 3", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
+body {
+  font-family: "Source Sans 3", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+
