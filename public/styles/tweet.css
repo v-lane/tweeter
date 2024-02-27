@@ -1,13 +1,9 @@
-article {
+article.tweet {
   border: solid;
   border-color: #545149;
   border-width: 3px;
   margin-top: 1em;
   padding: .5em;
-
-
-  
-
 
   header {
     display:flex;
@@ -35,11 +31,12 @@ article {
     }
 
     h3 {
-      color:#C5CBE3;
+      color:#CECCDA;
       font-weight: 300;
       margin:0;
     }
   }
+
   p {
     border-bottom: solid 3px #545149;
     padding: 1em;
@@ -58,5 +55,21 @@ article {
     time {
       font-size: .75em;
     }
+
+    .interactions {
+      color: #4056A1;
+    }
+
+    .interactions i {
+      padding: 2px
+    }
+
+    .interactions i:hover {
+      color: #f0ad05;
+    }
   }
+}
+
+article.tweet:hover {
+  box-shadow: 6px 6px #CECCDA;
 }
