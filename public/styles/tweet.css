@@ -4,72 +4,73 @@ article.tweet {
   border-width: 3px;
   margin-top: 1em;
   padding: .5em;
+}
 
-  header {
-    display:flex;
-    flex-direction: row;
-    background: none;
-    margin: auto;
-    height: auto;
-    color: #545149;
-    justify-content: space-between;
-    padding:.5em;
-    margin:0;
+article.tweet header {
+  display:flex;
+  flex-direction: row;
+  background: none;
+  margin: auto;
+  height: auto;
+  color: #545149;
+  justify-content: space-between;
+  padding:.5em;
+  margin:0;
+}
 
-    .userInfo {
-      display: flex;
-      align-items: center;
+article.tweet header .userInfo {
+  display: flex;
+  align-items: center;
 
-      img {
-        height:fit-content;
-        padding-right: 0.5em;
-      }
-    }
+}
 
-    h2 {
-      margin:0;
-    }
+article.tweet header .userInfo img {
+  height:fit-content;
+  padding-right: 0.5em;
+}
 
-    h3 {
-      color:#CECCDA;
-      font-weight: 300;
-      margin:0;
-    }
-  }
+article.tweet h2 {
+  margin:0;
+}
 
-  p {
-    border-bottom: solid 3px #545149;
-    padding: 1em;
-    text-align: left;
-    margin: 0;
-
-  }
-
-  footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items:flex-end;
-    padding: .5em;
-
-    time {
-      font-size: .75em;
-    }
-
-    .interactions {
-      color: #4056A1;
-    }
-
-    .interactions i {
-      padding: 2px
-    }
-
-    .interactions i:hover {
-      color: #f0ad05;
-    }
-  }
+article.tweet h3 {
+  color:#CECCDA;
+  font-weight: 300;
+  margin:0;
 }
 
 article.tweet:hover {
   box-shadow: 6px 6px #CECCDA;
+}
+
+article.tweet p {
+  border-bottom: solid 3px #545149;
+  padding: 1em;
+  text-align: left;
+  margin: 0;
+
+}
+
+article.tweet footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items:flex-end;
+  padding: .5em;
+}
+  
+article.tweet footer time {
+  font-size: .75em;
+}
+
+article.tweet footer .interactions {
+  color: #4056A1;
+}
+
+article.tweet footer .interactions i {
+  padding: 2px
+}
+
+article.tweet footer .interactions i:hover {
+  color: #f0ad05;
 }
