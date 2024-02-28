@@ -83,10 +83,13 @@ $(document).ready(function() {
 
   $('.new-tweet form').on('submit', function(event) {
     event.preventDefault();
-    console.log('button clicked, performing ajax call...');
+    const textSerialized = $(this).serialize();
 
-    // add ajax call here (method post)
-
+    $.ajax({
+      type: "POST",
+      url: "/tweets",
+      data: textSerialized,
+    });
   });
 
 });
