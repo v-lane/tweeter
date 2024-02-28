@@ -6,19 +6,6 @@
 
 $(document).ready(function() {
 
-  // input value in milliseconds, returns value in days (rounded down to nearest day)
-  const msToDay = function(ms) {
-    const day = Math.floor(ms / 1000 / 60 / 60 / 24);
-    return day;
-  };
-
-  // given value in milliseconds, returns number of days ago that time was from now (rounded down to nearest day)
-  const daysAgo = function(ms) {
-    const today = new Date();
-    const timeAgo = today - ms;
-    return msToDay(timeAgo);
-  };
-
   // given tweet object data, returns tweet element
   const createTweetElement = function(tweetData) {
     const tweet = $(`
@@ -32,7 +19,7 @@ $(document).ready(function() {
     </header>
     <p>${tweetData.content.text}</p>
     <footer>
-      <time>${daysAgo(tweetData.created_at)} days ago</time>
+      <time>${timeago.format(tweetData.created_at)}</time>
       <div class="interactions">
         <i class="fa-solid fa-flag"></i>
         <i class="fa-solid fa-retweet"></i>
