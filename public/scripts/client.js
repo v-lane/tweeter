@@ -84,17 +84,19 @@ $(document).ready(function() {
   
   // on '.new-tweet' form submit, validates submission then POSTs form data to '/tweets', else alerts user of error.
   $('.new-tweet form').on('submit', function(event) {
+    $('.new-tweet .error').hide().text('');
     event.preventDefault();
     const textLength = $(this)[0][0].value.trim().length;
     const textSerialized = $(this).serialize();
 
-    if (textLength === 0) alert('Tweet must be at least 1 character (not included spaces)!');
-    else if (textLength > 140) alert('Tweet cannot exceed 140 characters!');
+    if (textLength === 0) $('.new-tweet .error').slideDown(400).text('Tweet must be at least 1 character, not including spaces.');
+    else if (textLength > 140) $('.new-tweet .error').slideDown(400).text('Tweet cannot exceed 140 characters.');
     else $.ajax({
       method: "POST",
       url: "/tweets",
       data: textSerialized,
       success: () => {
+        $('.new-tweet .error').hide().text('');
         $('#tweet-text').val('');
         $('.counter').val('140');
         $('.tweets').empty();
