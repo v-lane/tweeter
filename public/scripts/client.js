@@ -6,6 +6,8 @@
 
 $(document).ready(function() {
 
+  // MARKUP FUNCTIONS
+
   // given tweet object data, returns tweet element
   const createTweetElement = function(tweetData) {
     const tweet = $(`
@@ -31,33 +33,53 @@ $(document).ready(function() {
     return tweet;
   };
 
+
+  // HELPER FUNCTIONS
+
+  // given single tweet data, as objects, prepend tweet as individual tweet element to main element
+  const renderNewTweet = function(tweetData) {
+    const $tweet = createTweetElement(tweetData);
+    $('.tweets').prepend($tweet);
+  };
+
+  // gets new tweet data from '/tweets' and calls renderNewTweet
+  const loadNewTweet = function() {
+    $.ajax({
+      method: "GET",
+      url: "/tweets",
+      success: (res) => {
+        renderNewTweet(res[res.length - 1]);
+      }
+    });
+  };
+
   // given all tweets data, as array of objects, prepends all tweets as individual tweet elements to main element
-  const renderTweet = function(tweetData) {
+  const renderTweets = function(tweetData) {
     for (const tweet of tweetData) {
       const $tweet = createTweetElement(tweet);
       $('.tweets').prepend($tweet);
     }
   };
 
-  // gets tweet data from '/tweets/' and calls renderTweet function
+  // gets tweet data from '/tweets' and calls renderTweets function
   const loadTweets = function() {
     $.ajax({
       method: "GET",
       url: "/tweets",
-      success: function(res) {
-        renderTweet(res);
+      success: (res) => {
+        renderTweets(res);
       }
     });
   };
 
-  loadTweets();
 
+  // LISTENING
+  
   // on '.new-tweet' form submit, validates submission then POSTs form data to '/tweets', else alerts user of error.
   $('.new-tweet form').on('submit', function(event) {
     event.preventDefault();
     const textLength = $(this)[0][0].value.trim().length;
     const textSerialized = $(this).serialize();
-    console.log(textLength);
 
     if (textLength === 0) alert('Tweet must be at least 1 character (not included spaces)!');
     else if (textLength > 140) alert('Tweet cannot exceed 140 characters!');
@@ -67,7 +89,14 @@ $(document).ready(function() {
       data: textSerialized,
       success: () => {
         $('#tweet-text').val('');
+        $('.counter').val('140');
+        loadNewTweet();
+
       }
     });
   });
+
+  // ON PAGE LOAD
+
+  loadTweets();
 });
