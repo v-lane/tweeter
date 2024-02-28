@@ -19,7 +19,7 @@ $(document).ready(function() {
       </div>
       <h3>${tweetData.user.handle}</h3>
     </header>
-    <p>${tweetData.content.text}</p>
+    <p>${escape(tweetData.content.text)}</p>
     <footer>
       <time>${timeago.format(tweetData.created_at)}</time>
       <div class="interactions">
@@ -37,21 +37,28 @@ $(document).ready(function() {
   // HELPER FUNCTIONS
 
   // given single tweet data, as objects, prepend tweet as individual tweet element to main element
-  const renderNewTweet = function(tweetData) {
-    const $tweet = createTweetElement(tweetData);
-    $('.tweets').prepend($tweet);
-  };
+  // const renderNewTweet = function(tweetData) {
+  //   const $tweet = createTweetElement(tweetData);
+  //   $('.tweets').prepend($tweet);
+  // };
 
-  // gets new tweet data from '/tweets' and calls renderNewTweet
-  const loadNewTweet = function() {
-    $.ajax({
-      method: "GET",
-      url: "/tweets",
-      success: (res) => {
-        renderNewTweet(res[res.length - 1]);
-      }
-    });
-  };
+  // // gets new tweet data from '/tweets' and calls renderNewTweet
+  // const loadNewTweet = function() {
+  //   $.ajax({
+  //     method: "GET",
+  //     url: "/tweets",
+  //     success: (res) => {
+  //       renderNewTweet(res[res.length - 1]);
+  //     }
+  //   });
+  // };
+
+  // escape text from user
+  const escape = function (str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
 
   // given all tweets data, as array of objects, prepends all tweets as individual tweet elements to main element
   const renderTweets = function(tweetData) {
