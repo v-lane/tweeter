@@ -47,18 +47,26 @@ $(document).ready(function() {
       success: function(res) {
         renderTweet(res);
       }
-    })
-  }
+    });
+  };
 
   loadTweets();
 
-
+  // on '.new-tweet' form submit, validates submission then POSTs form data to '/tweets', else alerts user of error.
   $('.new-tweet form').on('submit', function(event) {
     event.preventDefault();
+    const textLength = $(this)[0][0].value.length;
     const textSerialized = $(this).serialize();
 
+    if (textLength === 0) {
+      alert('Tweet must be at least 1 character!');
+    }
+    if (textLength > 140) {
+      alert('Tweet cannot exceed 140 characters!');
+    }
+
     $.ajax({
-      method: "POST", 
+      method: "POST",
       url: "/tweets",
       data: textSerialized,
       success: function() {
@@ -66,5 +74,4 @@ $(document).ready(function() {
       }
     });
   });
-
 });
