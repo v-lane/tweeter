@@ -7,17 +7,30 @@
 $(document).ready(function() {
 
   // Test / driver code (temporary). Eventually will get this from the server.
-  const tweetData = {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
+  const data = [
+    {
+      "user": {
+        "name": "Newton",
+        "avatars": "https://i.imgur.com/73hZDYK.png"
+        ,
+        "handle": "@SirIsaac"
+      },
+      "content": {
+        "text": "If I have seen further it is by standing on the shoulders of giants"
+      },
+      "created_at": 1461116232227
     },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  };
+    {
+      "user": {
+        "name": "Descartes",
+        "avatars": "https://i.imgur.com/nlhLi3I.png",
+        "handle": "@rd" },
+      "content": {
+        "text": "Je pense , donc je suis"
+      },
+      "created_at": 1461113959088
+    }
+  ]
 
   // input value in milliseconds, returns value in days (rounded down to nearest day)
   const msToDay = function(ms) {
@@ -32,7 +45,7 @@ $(document).ready(function() {
     return msToDay(timeAgo)
   }
 
-
+  // given tweet object data, returns tweet element
   const createTweetElement = function(tweetData) {
     const tweet = $(`
     <article class="tweet">
@@ -57,8 +70,14 @@ $(document).ready(function() {
     return tweet;
   };
 
-  const $tweet = createTweetElement(tweetData);
+  // given all tweets data, as array of objects, appends all tweets as individual tweet elements to main element
+const renderTweet = function(tweetData) {
+  for (const tweet of tweetData) {
+    const $tweet = createTweetElement(tweet);
+      $('main').append($tweet);
+  }
+}
 
-  $('main').append($tweet);
+renderTweet(data)  
 
 });
