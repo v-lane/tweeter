@@ -24,26 +24,27 @@ $(document).ready(function() {
       "user": {
         "name": "Descartes",
         "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
+        "handle": "@rd"
+      },
       "content": {
         "text": "Je pense , donc je suis"
       },
       "created_at": 1461113959088
     }
-  ]
+  ];
 
   // input value in milliseconds, returns value in days (rounded down to nearest day)
   const msToDay = function(ms) {
-    const day = Math.floor(ms / 1000 / 60 / 60 / 24)
+    const day = Math.floor(ms / 1000 / 60 / 60 / 24);
     return day;
-  }
+  };
 
   // given value in milliseconds, returns number of days ago that time was from now (rounded down to nearest day)
   const daysAgo = function(ms) {
     const today = new Date();
     const timeAgo = today - ms;
-    return msToDay(timeAgo)
-  }
+    return msToDay(timeAgo);
+  };
 
   // given tweet object data, returns tweet element
   const createTweetElement = function(tweetData) {
@@ -71,13 +72,21 @@ $(document).ready(function() {
   };
 
   // given all tweets data, as array of objects, appends all tweets as individual tweet elements to main element
-const renderTweet = function(tweetData) {
-  for (const tweet of tweetData) {
-    const $tweet = createTweetElement(tweet);
+  const renderTweet = function(tweetData) {
+    for (const tweet of tweetData) {
+      const $tweet = createTweetElement(tweet);
       $('.tweets').prepend($tweet);
-  }
-}
+    }
+  };
 
-renderTweet(data)  
+  renderTweet(data);
+
+  $('.new-tweet form').on('submit', function(event) {
+    event.preventDefault();
+    console.log('button clicked, performing ajax call...');
+
+    // add ajax call here (method post)
+
+  });
 
 });
