@@ -19,8 +19,11 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screenshots
 
+### Desktop View
 !["desktop view"](image.png)
 
+### Phone/Tablet View
 !["phone view"](image-2.png)
 
+### Tweets
 !["tweets"](image-3.png)
