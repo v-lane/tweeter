@@ -11,7 +11,7 @@ nav {
   padding-bottom: 0.5em;
   flex-direction: row;
   justify-content: space-between;
-  align-items:flex-end;
+  align-items: flex-end;
 }
 
 nav span {
@@ -24,7 +24,41 @@ nav span {
 nav ul {
   list-style-type: none;
   text-align: center;
-  align-items:flex-end;
+  align-items: flex-end;
   padding: 0;
   margin: 0;
+}
+
+nav button {
+  background: transparent;
+  border: none;
+  font-family: "Source Sans 3", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  color: white;
+  padding: 4px;
+}
+
+nav i {
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  transform-origin: top;
+}
+
+nav ul:hover i {
+  animation-name: bounce;
+  animation-timing-function: ease;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0)
+  }
 }

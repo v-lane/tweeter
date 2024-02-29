@@ -105,6 +105,16 @@ $(document).ready(function() {
     });
   });
 
+  $('nav button').on('click', function() {
+    const newTweet = $('.new-tweet'); // replace
+    if($('.new-tweet').css("display") == "none") {
+      $('.new-tweet').slideDown()
+      $('#tweet-text').focus();
+    } else {
+      $('.new-tweet').slideUp()
+    }
+  })
+
   // ON PAGE LOAD
 
   loadTweets();
