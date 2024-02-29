@@ -42,6 +42,24 @@ main {
   background-color: #f4f1ec;
 }
 
+main button.nav-up {
+  border-radius: 50%;
+  padding: 1em;
+  background-color:firebrick;
+  border: 0;
+  right: .5em;
+  bottom: .5em; 
+  display: none;
+  position: fixed;
+  font-size: 1.5em;
+}
+
+main button.nav-up:hover {
+  box-shadow: 3px #f4f1ec;
+  background-color:tomato;
+
+}
+
 /* Desktop styles */
 
 @media screen and (min-width: 1024px) {

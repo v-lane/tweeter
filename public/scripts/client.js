@@ -99,6 +99,28 @@ $(document).ready(function() {
     }
   });
 
+  // on scroll away from top of screen, nav tweet button disappears and bottom '.nav-up' button appears.
+  // on scroll, when reaches top of screen, nav tweet button appears and bottom '.nav-up' button disappears.
+  $(window).on('scroll', function() {
+    const scrollPos = $(window).scrollTop();
+    const composeTweetButton = $('nav ul');
+    const navUpButton = $('.nav-up')
+    if (scrollPos <= 0) {
+      composeTweetButton.show();
+      navUpButton.hide();
+    } else {
+      composeTweetButton.hide();
+      navUpButton.show();
+    }
+  })
+
+  //on bottom '.nav-up' button click, window scrolls to top, '.new-tweet' section opens (if previously closed), and mouse focuses on text area.
+  $('.nav-up').on('click', function() {
+    $(window).scrollTop(0)
+    $('.new-tweet').slideDown();
+    $('#tweet-text').focus();
+  })
+
   // ON PAGE LOAD
 
   loadTweets();
