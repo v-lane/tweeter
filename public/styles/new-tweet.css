@@ -48,6 +48,10 @@ section.new-tweet button {
 
 }
 
+section.new-tweet .counter.negative {
+  color: crimson;
+}
+
 
 
 
