@@ -1,5 +1,7 @@
 article.tweet {
   border: solid;
+  display: flex;
+  flex-direction: column;
   border-color: #545149;
   border-width: 3px;
   margin-top: 1em;
@@ -73,4 +75,13 @@ article.tweet footer .interactions i {
 
 article.tweet footer .interactions i:hover {
   color: #f0ad05;
+}
+
+
+/* Desktop styles */
+
+@media screen and (min-width: 1024px) {
+  article.tweet header {
+    width: 100%
+  }
 }

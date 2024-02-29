@@ -50,4 +50,21 @@ main {
   background-color: #f4f1ec;
 }
 
+/* Desktop styles */
+
+@media screen and (min-width: 1024px) {
+
+  body {
+    max-width: 2000px;
+    /* display: flex;
+    justify-content: center; */
+  }
+  
+  main {
+    width: 60%;
+    float: right;
+    margin-top: 120px;
+    padding: 1em;
+  }
+}
 

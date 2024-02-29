@@ -3,8 +3,8 @@ nav {
   height: 120px;
   width: 100%;
   top: 0;
+  background-color: transparent;
   position: fixed;
-  background-color: #4056A1;
   color: #FFFFFF;
   padding-left: 1.5em;
   padding-right: 1.5em;
@@ -46,19 +46,33 @@ nav i {
   transform-origin: top;
 }
 
-nav ul:hover i {
-  animation-name: bounce;
-  animation-timing-function: ease;
+
+/* tablet styles */
+
+@media screen and (min-width: 768px) {
+  nav {
+    background-color: #4056A1;
+  }
+  
 }
 
-@keyframes bounce {
-  0% {
-    transform: translateY(0);
+@media screen and (min-width: 1024px) {
+  
+  nav ul:hover i {
+    animation-name: bounce;
+    animation-timing-function: ease;
   }
-  50% {
-    transform: translateY(10px);
+  
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+    100% {
+      transform: translateY(0)
+    }
   }
-  100% {
-    transform: translateY(0)
-  }
+
 }

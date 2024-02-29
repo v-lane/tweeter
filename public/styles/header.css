@@ -1,11 +1,11 @@
 header {
-  margin-top: 120px;
-  height: 400px;
+  padding-top: 120px;
+  height: 520px;
   width: 100%;
   display: flex;
   background-color: #f0ad05;
   background-image: url("https://www.transparenttextures.com/patterns/arches.png");
-  justify-items: center;
+  justify-content:center;
   align-items: center;
   flex-direction: column;
   color: #FFFFFF;
@@ -13,4 +13,17 @@ header {
 
 header h2 {
   font-weight: 300;
+}
+
+/* Desktop styles */
+
+@media screen and (min-width: 1024px) {
+  header {
+    width: 30%;
+    float: left;
+    margin: 5%;
+    padding-top: 0;
+    margin-top: 200px;
+    height: 400px;
+  }
 }
