@@ -37,11 +37,11 @@ $(document).ready(function() {
   // HELPER FUNCTIONS
 
   // escape text from user
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
-  }
+  };
 
   // given all tweets data, as array of objects, prepends all tweets as individual tweet elements to main element
   const renderTweets = function(tweetData) {
@@ -64,7 +64,7 @@ $(document).ready(function() {
 
 
   // LISTENING
-  
+
   // on '.new-tweet' form submit, validates submission then POSTs form data to '/tweets', else alerts user of error.
   $('.new-tweet form').on('submit', function(event) {
     $('.new-tweet .error').hide().text('');
@@ -90,14 +90,14 @@ $(document).ready(function() {
 
   // on 'nav button' click, hides the '.new-tweet' section. If section is hidden, shows section and focuses mouse on
   $('nav button').on('click', function() {
-    const newTweet = $('.new-tweet'); 
-    if(newTweet.css("display") == "none") {
-      newTweet.slideDown()
+    const newTweet = $('.new-tweet');
+    if (newTweet.css("display") == "none") {
+      newTweet.slideDown();
       $('#tweet-text').focus();
     } else {
-      newTweet.slideUp()
+      newTweet.slideUp();
     }
-  })
+  });
 
   // ON PAGE LOAD
 

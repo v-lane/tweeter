@@ -55,9 +55,11 @@ nav ul:hover i {
   0% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(10px);
   }
+
   100% {
     transform: translateY(0)
   }
@@ -69,5 +71,5 @@ nav ul:hover i {
   nav {
     background-color: #4056A1;
   }
-  
+
 }
