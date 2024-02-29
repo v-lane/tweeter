@@ -36,23 +36,6 @@ $(document).ready(function() {
 
   // HELPER FUNCTIONS
 
-  // given single tweet data, as objects, prepend tweet as individual tweet element to main element
-  // const renderNewTweet = function(tweetData) {
-  //   const $tweet = createTweetElement(tweetData);
-  //   $('.tweets').prepend($tweet);
-  // };
-
-  // // gets new tweet data from '/tweets' and calls renderNewTweet
-  // const loadNewTweet = function() {
-  //   $.ajax({
-  //     method: "GET",
-  //     url: "/tweets",
-  //     success: (res) => {
-  //       renderNewTweet(res[res.length - 1]);
-  //     }
-  //   });
-  // };
-
   // escape text from user
   const escape = function (str) {
     let div = document.createElement('div');
@@ -105,13 +88,14 @@ $(document).ready(function() {
     });
   });
 
+  // on 'nav button' click, hides the '.new-tweet' section. If section is hidden, shows section and focuses mouse on
   $('nav button').on('click', function() {
-    const newTweet = $('.new-tweet'); // replace
-    if($('.new-tweet').css("display") == "none") {
-      $('.new-tweet').slideDown()
+    const newTweet = $('.new-tweet'); 
+    if(newTweet.css("display") == "none") {
+      newTweet.slideDown()
       $('#tweet-text').focus();
     } else {
-      $('.new-tweet').slideUp()
+      newTweet.slideUp()
     }
   })
 

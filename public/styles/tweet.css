@@ -6,6 +6,7 @@ article.tweet {
   border-width: 3px;
   margin-top: 1em;
   padding: .5em;
+  max-width: 80ch;
 }
 
 article.tweet header {
@@ -50,6 +51,7 @@ article.tweet p {
   padding: 1em;
   text-align: left;
   margin: 0;
+  overflow-wrap: break-word;
 
 }
 
@@ -82,6 +84,8 @@ article.tweet footer .interactions i:hover {
 
 @media screen and (min-width: 1024px) {
   article.tweet header {
-    width: 100%
+    width: 100%;
+    max-width: 80ch;
+
   }
 }

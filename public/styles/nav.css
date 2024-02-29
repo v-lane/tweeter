@@ -46,6 +46,22 @@ nav i {
   transform-origin: top;
 }
 
+nav ul:hover i {
+  animation-name: bounce;
+  animation-timing-function: ease;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0)
+  }
+}
 
 /* tablet styles */
 
@@ -54,25 +70,4 @@ nav i {
     background-color: #4056A1;
   }
   
-}
-
-@media screen and (min-width: 1024px) {
-  
-  nav ul:hover i {
-    animation-name: bounce;
-    animation-timing-function: ease;
-  }
-  
-  @keyframes bounce {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(10px);
-    }
-    100% {
-      transform: translateY(0)
-    }
-  }
-
 }
