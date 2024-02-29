@@ -1,0 +1,75 @@
+nav {
+  display: flex;
+  height: 120px;
+  width: 100%;
+  top: 0;
+  background-color: transparent;
+  position: fixed;
+  color: var(--header-font-color);
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  padding-bottom: 0.5em;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  span {
+    font-family: "Bungee", sans-serif;
+    font-weight: var(--logo-weight);
+    font-style: normal;
+    font-size: 200%;
+  }
+
+  ul {
+    list-style-type: none;
+    text-align: center;
+    align-items: flex-end;
+    padding: 0;
+    margin: 0;
+
+  }
+
+  ul:hover i {
+    animation-name: bounce;
+    animation-timing-function: ease;
+  }
+
+  button {
+    background: transparent;
+    border: none;
+    font-family: var(--body-font), sans-serif;
+    font-optical-sizing: auto;
+    font-weight: var(--body-font-weight-normal);
+    font-style: normal;
+    color: var(--header-font-color);
+    padding: 4px;
+  }
+
+  i {
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    transform-origin: top;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(0)
+  }
+}
+
+/* tablet styles */
+
+@media screen and (min-width: 768px) {
+  nav {
+    background-color: var(--nav-bg-color);
+  }
+}

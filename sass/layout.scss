@@ -16,40 +16,44 @@ html {
 /*
  * Global layout stuff
  */
-body {
-  color: var(--body-font-color);
-  background-color: var(--bg-color);
-  font-size: 24px;
-}
+ 
+ body {
+   color: var(--body-font-color);
+   background-color: var(--bg-color);
+   font-size: 24px;
+  }
+  
+  /*
+  * Additional CSS can be defined below or in other CSS files, as per instructions
+  */
 
-/*
-* Additional CSS can be defined below or in other CSS files, as per instructions
-*/
-:root {
-  --bg-color: #f4f1ec;
-  --body-font-color: #545149;
-  --body-font: "Source Sans 3";
-  --body-font-weight-strong: 600;
-  --body-font-weight-normal: 300;
-  --err-color: crimson;
-  --logo-font: "Bungee";
-  --logo-weight: 400;
-  --nav-bg-color: #4056A1;
-  --header-bg-color: #f0ad05;
-  --header-font-color: #FFFFFF;
-  --nav-up-button-color: firebrick;
-  --nav-up-button-color-hover: tomato;
-  --tweet-accent-color: #CECCDA;
-}
+  :root {
+   --bg-color: #f4f1ec;
+   --body-font-color: #545149;
+   --body-font: "Source Sans 3";
+   --body-font-weight-strong: 600;
+   --body-font-weight-normal: 300;
+   --err-color: crimson;
+   --logo-font: "Bungee";
+   --logo-weight: 400;
+   --nav-bg-color: #4056A1;
+   --header-bg-color: #f0ad05;
+   --header-font-color: #FFFFFF;
+   --nav-up-button-color: firebrick;
+   --nav-up-button-color-hover: tomato;
+   --tweet-accent-color: #CECCDA; 
+
+  }
 
 body {
   font-family: "Source Sans 3", sans-serif;
   font-optical-sizing: auto;
   font-weight: var(--body-font-weight-normal);
   font-style: normal;
-}
-body strong {
-  font-weight: var(--body-font-weight-strong);
+
+  strong {
+    font-weight: var(--body-font-weight-strong)
+  }
 }
 
 main {
@@ -63,10 +67,10 @@ main {
 main button.nav-up {
   border-radius: 50%;
   padding: 1em;
-  background-color: var(--nav-up-button-color);
+  background-color:var(--nav-up-button-color);
   border: 0;
-  right: 0.5em;
-  bottom: 0.5em;
+  right: .5em;
+  bottom: .5em; 
   display: none;
   position: fixed;
   font-size: 1.5em;
@@ -74,14 +78,18 @@ main button.nav-up {
 
 main button.nav-up:hover {
   box-shadow: 3px var(--bg-color);
-  background-color: var(--nav-up-button-color-hover);
+  background-color: var(--nav-up-button-color-hover)
+
 }
 
 /* Desktop styles */
+
 @media screen and (min-width: 1024px) {
+
   body {
     max-width: 2000px;
   }
+
   main {
     width: 60%;
     float: right;

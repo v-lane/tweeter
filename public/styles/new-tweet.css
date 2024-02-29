@@ -4,28 +4,24 @@ section.new-tweet {
   justify-content: space-between;
   max-width: 80ch;
 }
-
 section.new-tweet form {
   display: flex;
   flex-direction: column;
 }
-
 section.new-tweet label {
   align-self: flex-start;
-  font-weight: 600;
+  font-weight: var(--body-font-weight-strong);
 }
-
 section.new-tweet .error {
   display: none;
   align-self: flex-start;
   text-align: left;
-  color: crimson;
-  font-weight: 600;
-  border-left: 5px solid crimson;
+  color: var(--err-color);
+  font-weight: var(--body-font-weight-strong);
+  border-left: 5px solid var(--err-color);
   margin: 0;
-  padding-left: .5em;
+  padding-left: 0.5em;
 }
-
 section.new-tweet textarea {
   background: transparent;
   border-top: 0;
@@ -34,22 +30,18 @@ section.new-tweet textarea {
   border-bottom-width: 3px;
   resize: none;
 }
-
 section.new-tweet div {
   display: flex;
   justify-content: space-between;
   margin-top: 0.5em;
-  font-family: "Bungee", sans-serif;
-  font-weight: 400;
+  font-family: var(--logo-font), sans-serif;
+  font-weight: var(--logo-weight);
   font-style: normal;
 }
-
 section.new-tweet button {
-  color: #ffffff;
-  background: #4056A1;
-
+  color: var(--bg-color);
+  background: var(--nav-bg-color);
 }
-
 section.new-tweet .counter.negative {
-  color: crimson;
+  color: var(--err-color);
 }
